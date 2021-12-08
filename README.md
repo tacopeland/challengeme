@@ -9,16 +9,6 @@ This is a program meant to help me pick a programming project to do, what langua
 - Pre-bundle some default challenges that will be imported into the main db (maybe sqlite?).
 - Be able to insert and remove challenges from db.
 
-## Challenge sources:
-[x] Pro/g/ramming challenges v4.0 infograph.
-[x] Project Euler.
-[x] Protocols (get a list of RFCs, implement them).
-[ ] Special.
-  [ ] Find a trending Github repo in a certain language, get a pull request accepted.
-  [ ] Pick some random algorithm from CLRS and implement it.
-  [ ] Pick some random algorithm from An Introduction to Mathematical Cryptography and implement it.
-[ ] Personally added challenges.
-
 ## Possible modifiers:
 - Give it a really nice UI.
 - Make it cross-platform and bundle it for Linux, Mac and Windows.
@@ -74,3 +64,18 @@ challenge = {
 
 ## Caveats:
 - IMPORTANT: there cannot be commas in programming language names.
+
+## TODO:
+### Add challenge sources:
+- [x] Pro/g/ramming challenges v4.0 infograph.
+- [x] Project Euler.
+- [x] Protocols (get a list of RFCs, implement them).
+- [ ] Special.
+  - [ ] Find a trending Github repo in a certain language, get a pull request accepted.
+  - [ ] Pick some random algorithm from CLRS and implement it.
+  - [ ] Pick some random algorithm from An Introduction to Mathematical Cryptography and implement it.
+- [ ] Personally added challenges.
+### Add features:
+- [x] Add public functions to add challenges and languages into the database in the DataHandler.
+- [x] Add private functions to add challenge sets for use in `__load_defaults()`.
+- [ ] Allow the use of challenge numbers instead of challenge names in the defaults configs for challenge sets like Project Euler.
