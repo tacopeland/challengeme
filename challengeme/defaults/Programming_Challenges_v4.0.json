@@ -1,0 +1,589 @@
+{
+	"name": "Pro/g/ramming Challenges, v4.0",
+	"challenges": [
+		{
+			"description": "Download manager",
+			"notes": ""
+		},
+		{
+			"description": "Elastic producer/consumer task queue",
+			"notes": ""
+		},
+		{
+			"description": "IRC client",
+			"notes": ""
+		},
+		{
+			"description": "Markov chain sentence generator",
+			"notes": "Include shitposting capabilities"
+		},
+		{
+			"description": "English sentence parser that points to the context of a sentence",
+			"notes": ""
+		},
+		{
+			"description": "MIDI player + editor",
+			"notes": ""
+		},
+		{
+			"description": "Stock market simulator using Yahoo spreadsheet data",
+			"notes": ""
+		},
+		{
+			"description": "Parametric/graphic equalizer for .wav files",
+			"notes": "Make it real-time"
+		},
+		{
+			"description": "Graphing calculator",
+			"notes": "Bonus: graph the function's derivatives"
+		},
+		{
+			"description": "To-do list application",
+			"notes": "Web app or CLI"
+		},
+		{
+			"description": "Verlet integration",
+			"notes": "Verlet Cloth"
+		},
+		{
+			"description": "TCP/UDP chat server + client",
+			"notes": ""
+		},
+		{
+			"description": "Music streaming",
+			"notes": ""
+		},
+		{
+			"description": "Shazam",
+			"notes": ""
+		},
+		{
+			"description": "Chatbot",
+			"notes": "with conversation retention"
+		},
+		{
+			"description": "Curses text editor",
+			"notes": "With Emacs/Vim keybindings"
+		},
+		{
+			"description": "Paint clone",
+			"notes": ""
+		},
+		{
+			"description": "Image to ASCII art",
+			"notes": ""
+		},
+		{
+			"description": "Booru (image board) image downloader",
+			"notes": ""
+		},
+		{
+			"description": "Image converter",
+			"notes": ""
+		},
+		{
+			"description": "ID3 reader",
+			"notes": ""
+		},
+		{
+			"description": "Sound synthesis (sine, square, sawtooth, etc.)",
+			"notes": "\"Fuck You\" mode: Realtime MIDI playback with custom instruments"
+		},
+		{
+			"description": "C++ IDE plugin for Sublime/Atom",
+			"notes": "Auto-complete, go-to symbol declaration and definition using Clang's AST"
+		},
+		{
+			"description": "Simple version control system",
+			"notes": "Include checkout, commit (with commit message), unlocking, and per-file configuration of number of revisions kept"
+		},
+		{
+			"description": "Imageboard",
+			"notes": "Imagine vichan"
+		},
+		{
+			"description": "Password manager",
+			"notes": ""
+		},
+		{
+			"description": "Create a torrent client",
+			"notes": "CLI or GUI"
+		},
+		{
+			"description": "Booru client",
+			"notes": ""
+		},
+		{
+			"description": "Key press bot",
+			"notes": ""
+		},
+		{
+			"description": "IP/URL obscurification",
+			"notes": "http://www.pc-help.org/obscure.htm"
+		},
+		{
+			"description": "Radix Base Converter",
+			"notes": "Given a radix base, convert it to decimal"
+		},
+		{
+			"description": "Chan aggregator",
+			"notes": "Lets user view various boards from different 'chans'. Bonus: add 4ChanX and archiving functionality"
+		},
+		{
+			"description": "Encrypt a file, and upload it online",
+			"notes": ""
+		},
+		{
+			"description": "Text editor",
+			"notes": "Autosave, include date in filename"
+		},
+		{
+			"description": "HSV color representation",
+			"notes": ""
+		},
+		{
+			"description": "Window manager",
+			"notes": ""
+		},
+		{
+			"description": "Basic relational database software",
+			"notes": "SQL support, handle relationships, focus on efficiency"
+		},
+		{
+			"description": "Pixel editor",
+			"notes": ""
+		},
+		{
+			"description": "TFTP",
+			"notes": "Allow a client to put a file onto a remote host"
+		},
+		{
+			"description": "Markdown (HTML/XML) editor",
+			"notes": ""
+		},
+		{
+			"description": "IP tracking visualization",
+			"notes": ""
+		},
+		{
+			"description": "Port scanner",
+			"notes": ""
+		},
+		{
+			"description": "Old school demo effect",
+			"notes": "Plasma, tunnel, scrollers, zoomers, etc."
+		},
+		{
+			"description": "Fizzbuzz",
+			"notes": ""
+		},
+		{
+			"description": "RPN calculator",
+			"notes": ""
+		},
+		{
+			"description": "Count occurrences of characters in a given string",
+			"notes": "Include unicode support"
+		},
+		{
+			"description": "Towers of Hanoi",
+			"notes": ""
+		},
+		{
+			"description": "Music visualizer",
+			"notes": ""
+		},
+		{
+			"description": "Unicode converter",
+			"notes": "Support for UTF-8, 16LE, 32LE, and 32BE"
+		},
+		{
+			"description": "Calculate the first n digits of pi",
+			"notes": ""
+		},
+		{
+			"description": "Least Squares fitting algorithm",
+			"notes": ""
+		},
+		{
+			"description": "Given an array of stocks's values over time, find the period of time where the stocks could have made the most money",
+			"notes": ""
+		},
+		{
+			"description": "Highest prime factor calculator",
+			"notes": ""
+		},
+		{
+			"description": "Hide and extract data in images",
+			"notes": "Basic steganography. Bonus: include .gif support"
+		},
+		{
+			"description": "Web page crawler",
+			"notes": ""
+		},
+		{
+			"description": "Password generator",
+			"notes": "Let user choose options"
+		},
+		{
+			"description": "Vigenère cipher encryption and decryption",
+			"notes": ""
+		},
+		{
+			"description": "Game of Life",
+			"notes": ""
+		},
+		{
+			"description": "Caesar cipher cracker",
+			"notes": ""
+		},
+		{
+			"description": "Dijkstra's algorithm",
+			"notes": ""
+		},
+		{
+			"description": "ROT13",
+			"notes": ""
+		},
+		{
+			"description": "Program that displays MBR contents",
+			"notes": ""
+		},
+		{
+			"description": "Random name picker",
+			"notes": ""
+		},
+		{
+			"description": "Encrypt/decrypt text",
+			"notes": "Implement at least one from http://rumkin.com/tools/cipher/collection"
+		},
+		{
+			"description": "Youtube to MP3",
+			"notes": ""
+		},
+		{
+			"description": "Text to hexadecimal/binary",
+			"notes": ""
+		},
+		{
+			"description": "Calculate the first 1000 digits of pi iteratively",
+			"notes": ""
+		},
+		{
+			"description": "Sierpinski triangle",
+			"notes": ""
+		},
+		{
+			"description": "Mandlebrot set",
+			"notes": ""
+		},
+		{
+			"description": "OpenAI gym project",
+			"notes": ""
+		},
+		{
+			"description": "AI for roguelikes",
+			"notes": ""
+		},
+		{
+			"description": "Sudoku/n-Puzzle solver using A* algorithm",
+			"notes": ""
+		},
+		{
+			"description": "Connect-4 AI player using alpha-beta pruning",
+			"notes": ""
+		},
+		{
+			"description": "Basic neural network",
+			"notes": "Simulate individual neurons and their connections"
+		},
+		{
+			"description": "Real neural network",
+			"notes": "Implement a basic feed-forward neural network using matrices for entire layers along with matrix operations for computation"
+		},
+		{
+			"description": "Convolutional neural network",
+			"notes": "Implement a convolutional N.N. for handwritten digit recognition, test on MNIST dataset (use TensorFlow, Theano, etc.)",
+			"languageConstraints": ["Python", "C++"]
+		},
+		{
+			"description": "Convolutional neural network (no TensorFlow)",
+			"notes": "Implement your own convolutional neural network for handwritten digit recognition, test on MNIST dataset (without TensorFlow, Theano, etc.)"
+		},
+		{
+			"description": "Virtual Machine with a script that writes \"Hello, world\"",
+			"notes": ""
+		},
+		{
+			"description": "Basic bootloader",
+			"notes": "With extended filesystem"
+		},
+		{
+			"description": "Terminal shell",
+			"notes": "Executable binaries, pipe system, redirection, and history. Bonus: make it a GUI"
+		},
+		{
+			"description": "HTML + JavaScript debugger",
+			"notes": ""
+		},
+		{
+			"description": "Write an interpreted LISP-like programming language",
+			"notes": ""
+		},
+		{
+			"description": "FUSE-based application for mounting filesystems from other OSes",
+			"notes": ""
+		},
+		{
+			"description": "Universal Asynchronous Reciever/Transmitter (UART) Game",
+			"notes": "In assembly",
+			"languageConstraints": ["x86 Assembly"]
+		},
+		{
+			"description": "Pong game as a UEFI file in color",
+			"notes": "http://www.rodsbooks.com/efi-programming/index.html",
+			"languageConstraints": ["C"]
+		},
+		{
+			"description": "Design an esoteric language",
+			"notes": ""
+		},
+		{
+			"description": "C compiler",
+			"notes": ""
+		},
+		{
+			"description": "Turing machine simulator",
+			"notes": ""
+		},
+		{
+			"description": "Read-evaluate-print loop (REPL) using a compiled language",
+			"notes": ""
+		},
+		{
+			"description": "Static website generator",
+			"notes": "Scriptable templates + content -> HTML and CSS"
+		},
+		{
+			"description": "CHIP-8 emulator",
+			"notes": "Hard mode: cached interpreter. \"Fuck You\" mode: dynamic recompiler, use dynarec/jit library"
+		},
+		{
+			"description": "Double pendulum simulation",
+			"notes": ""
+		},
+		{
+			"description": "Constructive solid geometry",
+			"notes": ""
+		},
+		{
+			"description": "Ray tracer",
+			"notes": ""
+		},
+		{
+			"description": "Real-time Fast Fourier Transform (FFT) spectrum visualizer",
+			"notes": ""
+		},
+		{
+			"description": "Generate a complimentary color from any input color",
+			"notes": ""
+		},
+		{
+			"description": "Generate a 5-color scheme from the most dominant tones in any image",
+			"notes": ""
+		},
+		{
+			"description": "General Lambert's Problem solver",
+			"notes": "At least it's not rocket science... Oh wait, it actually is"
+		},
+		{
+			"description": "Ti-86 emulator",
+			"notes": "Bonus: include the option to create programs"
+		},
+		{
+			"description": "N-body simulator",
+			"notes": "Make with particles having a certain mass and radius depending on the mass that will merge if they collide. Bonus: include a GUI where you can place particles"
+		},
+		{
+			"description": "Eulerian path",
+			"notes": ""
+		},
+		{
+			"description": "Draw a spinning 3D cube",
+			"notes": ""
+		},
+		{
+			"description": "Cellular textures",
+			"notes": ""
+		},
+		{
+			"description": "Knight's Tour",
+			"notes": ""
+		},
+		{
+			"description": "Monster raising/breeding simulator",
+			"notes": "Tamagotchi, anyone?"
+		},
+		{
+			"description": "Tetris",
+			"notes": ""
+		},
+		{
+			"description": "Snake",
+			"notes": ""
+		},
+		{
+			"description": "Pipe Dreams",
+			"notes": ""
+		},
+		{
+			"description": "Pac Man",
+			"notes": "Implement different behaviors for each ghost"
+		},
+		{
+			"description": "Dragon Quest / Basic RPG Engine",
+			"notes": ""
+		},
+		{
+			"description": "Rock Paper Scissors",
+			"notes": ""
+		},
+		{
+			"description": "First-person engine in OpenGL",
+			"notes": "Support walking, looking around, jumping on obstacles. Bonus: VR compatibility"
+		},
+		{
+			"description": "Shuffle a deck of cards",
+			"notes": "Include a visualization"
+		},
+		{
+			"description": "Simulate a game of tag using a multi-agent system",
+			"notes": ""
+		},
+		{
+			"description": "Wolfenstein clone",
+			"notes": "FPS, two-dimensional map that appears to be 3D. If you need a starting point, search of bisquit's video about DOOM-like engines"
+		},
+		{
+			"description": "Scorched Earth clone",
+			"notes": ""
+		},
+		{
+			"description": "Minesweeper",
+			"notes": ""
+		},
+		{
+			"description": "An audio/visual 64KB demonstration",
+			"notes": ""
+		},
+		{
+			"description": "Sudoku",
+			"notes": ""
+		},
+		{
+			"description": "Danmaku (bullet hell) engine",
+			"notes": ""
+		},
+		{
+			"description": "Roguelike engine / dungeon generator",
+			"notes": ""
+		},
+		{
+			"description": "Design a game engine in Unity",
+			"notes": "",
+			"languageConstraints": ["C#"]
+		},
+		{
+			"description": "Yahtzee",
+			"notes": "Game clone"
+		},
+		{
+			"description": "Oil Panic",
+			"notes": "Game clone"
+		},
+		{
+			"description": "Chess",
+			"notes": "Game clone"
+		},
+		{
+			"description": "Go",
+			"notes": "No AI necessary"
+		},
+		{
+			"description": "Connect Four",
+			"notes": "Game clone"
+		},
+		{
+			"description": "Mastermind",
+			"notes": "Game clone"
+		},
+		{
+			"description": "Missile Command",
+			"notes": "Game clone"
+		},
+		{
+			"description": "Tron",
+			"notes": "Game clone"
+		},
+		{
+			"description": "Breakout",
+			"notes": "Game clone"
+		},
+		{
+			"description": "Simon",
+			"notes": "Game clone"
+		},
+		{
+			"description": "LISP interpreter",
+			"notes": ""
+		},
+		{
+			"description": "Ulam spiral",
+			"notes": ""
+		},
+		{
+			"description": "Bellman-ford simulation with at least five vertices",
+			"notes": ""
+		},
+		{
+			"description": "Matrix arithmetic",
+			"notes": ""
+		},
+		{
+			"description": "File compression utility",
+			"notes": "Make it GUI"
+		},
+		{
+			"description": "PDF tagger",
+			"notes": ""
+		},
+		{
+			"description": "Nonogram generator and solver",
+			"notes": ""
+		},
+		{
+			"description": "Calculate dot and cross product of two vectors",
+			"notes": ""
+		},
+		{
+			"description": "Bismuth fractal",
+			"notes": ""
+		},
+		{
+			"description": "Seam carving",
+			"notes": ""
+		},
+		{
+			"description": "Bayesian filter",
+			"notes": ""
+		},
+		{
+			"description": "WMS viewer that isn't web based",
+			"notes": ""
+		},
+		{
+			"description": "ASCII digital clock",
+			"notes": ""
+		}
+	]
+}

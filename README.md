@@ -10,14 +10,14 @@ This is a program meant to help me pick a programming project to do, what langua
 - Be able to insert and remove challenges from db.
 
 ## Challenge sources:
-- Pro/g/ramming challenges v4.0 infograph.
-- Project Euler.
-- Protocols (get a list of RFCs, implement them).
-- Special.
-  - For example, picks some random popular git repo and challenges you to get a pull request accepted.
-  - Pick some random algorithm from CLRS and implement it.
-  - Pick some random algorithm from An Introduction to Mathematical Cryptography and implement it.
-- Personally added challenges.
+[x] Pro/g/ramming challenges v4.0 infograph.
+[x] Project Euler.
+[x] Protocols (get a list of RFCs, implement them).
+[ ] Special.
+  [ ] Find a trending Github repo in a certain language, get a pull request accepted.
+  [ ] Pick some random algorithm from CLRS and implement it.
+  [ ] Pick some random algorithm from An Introduction to Mathematical Cryptography and implement it.
+[ ] Personally added challenges.
 
 ## Possible modifiers:
 - Give it a really nice UI.
@@ -29,6 +29,17 @@ This is a program meant to help me pick a programming project to do, what langua
 - Do it on OpenBSD.
 - Make it very parallel (use OpenCL if applicable).
 
+## Challenge category object:
+```py
+category = {
+	id: 1,
+	name: "Project Euler",
+	challenges: [],
+	num-challenges: 700
+}
+```
+The challenges attribute is the list of challenge objects, but if it's too much of a hassle to get the descriptions then we can just supply num-challenges while leaving challenges empty and we will only receive a challenge number when receiving the challenge.
+
 ## Possible challenge object:
 ```py
 challenge = {
@@ -39,7 +50,8 @@ challenge = {
 	languageConstraint: ["lang1", "lang2"],
 	started: date,    # leave null if not started yet
 	completed: date,  # leave null if not finished yet
-	languageUsed: "lang2"}
+	languageUsed: "lang2"
+}
 ```
 
 ## Langs to start with:
@@ -60,10 +72,5 @@ challenge = {
 - Julia 
 - COBOL
 
-Include exclusions for things like incompatible languages for each modifier:
-```py
-exclusion = {
-	modifier: 1, # Cross-platform
-	languageConstraint: ["x86/64 Assembly", "MIPS Assembly"]
-}
-```
+## Caveats:
+- IMPORTANT: there cannot be commas in programming language names.

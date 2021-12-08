@@ -1,0 +1,57 @@
+{
+	"name": "Protocols",
+	"challenges": [
+		{
+			"description": "Telnet",
+			"notes": "RFC 854"
+		},
+		{
+			"description": "File Transfer Protocol",
+			"notes": "RFC 855"
+		},
+		{
+			"description": "Domain Name System",
+			"notes": "RFC 1035"
+		},
+		{
+			"description": "Echo",
+			"notes": "RFC 862"
+		},
+		{
+			"description": "Address Resolution Protocol",
+			"notes": "RFC 826"
+		},
+		{
+			"description": "Point-to-Point Protocol",
+			"notes": "RFC 1661"
+		},
+		{
+			"description": "Post Office Protocol",
+			"notes": "RFC 1939"
+		},
+		{
+			"description": "Open Shortest Path First",
+			"notes": "RFC 2328"
+		},
+		{
+			"description": "Routing Information Protocol v2",
+			"notes": "RFC 2453"
+		},
+		{
+			"description": "Internet Key Exchange v2",
+			"notes": "RFC 7296"
+		},
+		{
+			"description": "Gopher",
+			"notes": "RFC 1436"
+		},
+		{
+			"description": "Internet Relay Chat",
+			"notes": "RFC 1459"
+		},
+		{
+			"description": "Hypertext Transfer Protocol Version 2",
+			"notes": "RFC 7540"
+		}
+	]
+}

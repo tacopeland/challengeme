@@ -1,0 +1,10 @@
+# Data files
+data.db
+
+# Vim files
+.*.swp
+
+# Python compiler leftovers
+**/__pycache__/
+*.py[cod]
+*$py.class
