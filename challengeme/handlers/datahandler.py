@@ -1,11 +1,10 @@
+from ..exceptions import CorruptDatabaseError, AlreadyInDBError
+
 import json
 from pathlib import Path
 import os
 import sqlite3
 import sys
-
-class AlreadyInDBError(Exception):
-    pass
 
 class DataHandler:
     """Handle reading and writing saved challenge data."""
@@ -131,6 +130,8 @@ class DataHandler:
     def __load_defaults(self, con):
         cur = con.cursor()
 
+        self.__add_challenge_set(con, "Self-added challenges")
+
         default_files = Path(self.defaultsdir).glob("*.json")
         for file in default_files:
             with open(file, encoding="utf8") as data_fp:
@@ -142,7 +143,7 @@ class DataHandler:
                     print(f"You have a duplicate challenge set in file {file}."
                           " It will not be added to the database.",
                          file=sys.stderr)
-                else: 
+                else:
                     for chall in chall_data["challenges"]:
                         if "languageConstraints" in chall:
                             langs = ",".join(chall["languageConstraints"])
@@ -150,7 +151,8 @@ class DataHandler:
                             langs = ""
 
                         try:
-                            self.add_challenge(con, set_id, chall["description"],
+                            self.add_challenge(con, set_id,
+                                               chall["description"],
                                                chall["notes"], langs)
                         except AlreadyInDBError:
                             print("You have a duplicate challenge: "
@@ -159,14 +161,51 @@ class DataHandler:
                                   file=sys.stderr)
         cur.close()
 
+    def is_db_valid(self, con):
+        cur = con.cursor()
+        cur.execute("""SELECT name FROM sqlite_master
+                       WHERE type = 'table' AND name NOT LIKE 'sqlite_%'
+                       ORDER BY 1;""")
+        if set(cur.fetchall()) != {('challenge_sets',),
+                                   ('challenges',),
+                                   ('languages',)}:
+            return False
+
+        cur.execute('SELECT * FROM challenge_sets LIMIT 0;')
+        challset_cols = [desc[0] for desc in cur.description]
+        cur.execute('SELECT * FROM challenges LIMIT 0;')
+        chall_cols = [desc[0] for desc in cur.description]
+        cur.execute('SELECT * FROM languages LIMIT 0;')
+        language_cols = [desc[0] for desc in cur.description]
+
+        if challset_cols != ['id', 'name']:
+            return False
+        if chall_cols != ['id', 'set_id', 'description', 'notes',
+                          'language_constraints', 'date_started',
+                          'date_finished', 'language_used']:
+            return False
+        if language_cols != ['id', 'name']:
+            return False
+
+        return True
+
     def load_db(self):
         load_defaults = False
-        if not (os.path.exists(self.dbfile) and os.path.isfile(self.dbfile)):
+        if not (os.path.exists(self.dbfile)
+                and os.path.isfile(self.dbfile)
+                and os.stat(self.dbfile).st_size > 0):
             load_defaults = True
 
         con = self.__connect_to_db()
-        if load_defaults:
-            print("Creating and initializing database...")
+
+        try:
+            valid = self.is_db_valid(con)
+        except sqlite3.DatabaseError:
+            raise CorruptDatabaseError("db_file " + self.dbfile + " corrupted")
+
+        if not load_defaults and not valid:
+            raise CorruptDatabaseError("db_file " + self.dbfile + " corrupted")
+        elif load_defaults:
             self.__create_tables(con)
             self.__load_defaults(con)
         return con
