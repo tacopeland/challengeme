@@ -78,6 +78,6 @@ challenge = {
 ### Add features:
 - [x] Add public functions to add challenges and languages into the database in the DataHandler.
 - [x] Add private functions to add challenge sets for use in `__load_defaults()`.
-- [ ] Allow the use of challenge numbers instead of challenge names in the defaults configs for challenge sets like Project Euler.
+- [x] Allow the use of challenge numbers instead of challenge names in the defaults configs for challenge sets like Project Euler.
 - [ ] Add handlers for getting challenges (either a certain one or all), languages, and challenge sets, and returning them as objects.
 - [ ] Add objects for holding challenges, languages, and challenge sets.
