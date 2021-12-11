@@ -90,7 +90,7 @@ class DataHandler:
         cur.close()
         return challenge_id
 
-    def add_challenge(self, con, set_id, desc, notes="", langs=""):
+    def add_challenge(self, con, set_id, desc, notes="", langs=[]):
         cur = con.cursor()
         if self.get_challenge_id(con, desc) is not None:
             raise AlreadyInDBError(f"Challenge {desc} is already in the DB")
@@ -99,7 +99,8 @@ class DataHandler:
                                               description,
                                               notes,
                                               language_constraints)
-                       VALUES(?,?,?,?);""", (set_id, desc, notes, langs))
+                       VALUES(?,?,?,?);""", (set_id, desc, notes,
+                                             ",".join(langs)))
         cur.close()
         return self.get_challenge_id(con, desc)
 
@@ -146,9 +147,9 @@ class DataHandler:
                 else:
                     for chall in chall_data["challenges"]:
                         if "languageConstraints" in chall:
-                            langs = ",".join(chall["languageConstraints"])
+                            langs = chall["languageConstraints"]
                         else:
-                            langs = ""
+                            langs = []
 
                         try:
                             self.add_challenge(con, set_id,

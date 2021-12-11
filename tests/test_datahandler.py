@@ -4,7 +4,7 @@ import sqlite3
 import unittest
 
 import context
-import challengeme.config
+import challengeme.config as conf
 from challengeme.handlers.datahandler import DataHandler
 from challengeme.exceptions import CorruptDatabaseError
 
@@ -86,7 +86,7 @@ class TestDataHandler(unittest.TestCase):
 
         CHALL_DESC = "@@@@!@ THIS IS A DUMMY DESCRIPTION @!@@#@"
         CHALL_NOTES = "&&&**# THIS IS A DUMMY NOTE ##(()^"
-        CHALL_SET_ID = handler.get_challenge_set_id(config.personal)
+        CHALL_SET_ID = handler.get_challenge_set_id(con, conf.personal)
         self.assertIsNotNone(CHALL_SET_ID)
         CHALL_LANGS = ["C++", "golang", "brainfuck"]
 
