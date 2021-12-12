@@ -1,4 +1,5 @@
 from ..exceptions import CorruptDatabaseError, AlreadyInDBError
+from ..challenges import Challenge
 
 import json
 from pathlib import Path
@@ -43,7 +44,7 @@ class DataHandler:
                        CREATE TABLE IF NOT EXISTS challenges (
                            id integer PRIMARY KEY,
                            set_id integer NOT NULL,
-                           description text NOT NULL,
+                           description text NOT NULL UNIQUE,
                            notes text,
                            language_constraints text,
                            date_started text,
@@ -67,6 +68,12 @@ class DataHandler:
         cur.close()
         return lang_id
 
+    def get_languages(self, con):
+        cur = con.cursor()
+        cur.execute("SELECT * FROM languages;")
+
+        return list(cur.fetchall())
+
     def add_language(self, con, name):
         cur = con.cursor()
         if self.get_language_id(con, name) is not None:
@@ -89,6 +96,17 @@ class DataHandler:
 
         cur.close()
         return challenge_id
+
+    def get_challenges(self, con):
+        cur = con.cursor()
+        cur.execute("SELECT * FROM challenges;")
+
+        res = []
+        for row in cur.fetchall():
+            langs = [] if len(row[4]) == 0 else row[4].split(',')
+            res.append(Challenge(row[0], row[1], row[2], row[3],
+                              langs, row[5], row[6], row[7]))
+        return res
 
     def add_challenge(self, con, set_id, desc, notes="", langs=[]):
         cur = con.cursor()
@@ -117,6 +135,12 @@ class DataHandler:
         cur.close()
         return set_id
 
+    def get_challenge_sets(self, con):
+        cur = con.cursor()
+        cur.execute("SELECT * FROM challenge_sets;")
+
+        return list(cur.fetchall())
+
     def __add_challenge_set(self, con, name):
         cur = con.cursor()
         if self.get_challenge_set_id(con, name) is not None:
@@ -144,32 +168,33 @@ class DataHandler:
                     print(f"You have a duplicate challenge set in file {file}."
                           " It will not be added to the database.",
                          file=sys.stderr)
-                else:
-                    if ("challenges" in chall_data.keys()
-                        and len(chall_data["challenges"]) > 0):
-                        for chall in chall_data["challenges"]:
-                            if "languageConstraints" in chall:
-                                langs = chall["languageConstraints"]
-                            else:
-                                langs = []
+                    return
 
-                            try:
-                                self.add_challenge(con, set_id,
-                                                   chall["description"],
-                                                   chall["notes"], langs)
-                            except AlreadyInDBError:
-                                print("You have a duplicate challenge: "
-                                      f"{chall['description']}. "
-                                      "It will not be added to the database.",
-                                      file=sys.stderr)
-                    elif "num-challenges" in chall_data.keys():
-                        for i in range(chall_data["num-challenges"]):
-                            try:
-                                name = f'{chall_data["name"]} challenge {i}'
-                                self.add_challenge(con, set_id, name, "", [])
-                            except AlreadyInDBError:
-                                print("Duplicate challenge was added in "
-                                      "_load_defaults. This is a bug.")
+                if ("challenges" in chall_data.keys()
+                    and len(chall_data["challenges"]) > 0):
+                    for chall in chall_data["challenges"]:
+                        if "languageConstraints" in chall:
+                            langs = chall["languageConstraints"]
+                        else:
+                            langs = []
+
+                        try:
+                            self.add_challenge(con, set_id,
+                                               chall["description"],
+                                               chall["notes"], langs)
+                        except AlreadyInDBError:
+                            print("You have a duplicate challenge: "
+                                  f"{chall['description']}. "
+                                  "It will not be added to the database.",
+                                  file=sys.stderr)
+                elif "num-challenges" in chall_data.keys():
+                    for i in range(chall_data["num-challenges"]):
+                        try:
+                            name = f'{chall_data["name"]} challenge {i}'
+                            self.add_challenge(con, set_id, name, "", [])
+                        except AlreadyInDBError:
+                            print("Duplicate challenge was added in "
+                                  "_load_defaults. This is a bug.")
         cur.close()
 
     def is_db_valid(self, con):

@@ -74,10 +74,17 @@ challenge = {
   - [ ] Find a trending Github repo in a certain language, get a pull request accepted.
   - [ ] Pick some random algorithm from CLRS and implement it.
   - [ ] Pick some random algorithm from An Introduction to Mathematical Cryptography and implement it.
-- [ ] Personally added challenges.
+- [x] Personally added challenges.
 ### Add features:
 - [x] Add public functions to add challenges and languages into the database in the DataHandler.
 - [x] Add private functions to add challenge sets for use in `__load_defaults()`.
 - [x] Allow the use of challenge numbers instead of challenge names in the defaults configs for challenge sets like Project Euler.
-- [ ] Add handlers for getting challenges (either a certain one or all), languages, and challenge sets, and returning them as objects.
-- [ ] Add objects for holding challenges, languages, and challenge sets.
+- [x] Add handlers for getting challenges, languages, and challenge sets, and returning them as dicts.
+- [x] Add objects for holding challenges.
+- [ ] Add modifiers
+- [ ] Add option in each challenge set to disable modifiers per set.
+- [ ] Handle command line options for adding languages and new challenges, picking a challenge (and accepting)
+- [ ] Handle picking from a list of accepted challenges to mark one as complete.
+- [ ] Handle printing statistics for how many challenges are done in each language, how long they take, etc.
+- [ ] Let the user add a challenge-language or challenge-modifier or even language-modifier exclusion for a challenge if they decline it.
+- [ ] Let the user re-scan the defaults directory for new challenge sets (may have to rename directory) and add the new ones to the database without clobbering it.
