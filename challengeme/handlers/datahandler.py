@@ -1,11 +1,12 @@
-from ..exceptions import CorruptDatabaseError, AlreadyInDBError
-from ..challenges import Challenge
-
+import datetime
 import json
 from pathlib import Path
 import os
 import sqlite3
 import sys
+
+from ..exceptions import CorruptDatabaseError, AlreadyInDBError
+from ..challenges import Challenge
 
 class DataHandler:
     """Handle reading and writing saved challenge data."""
@@ -121,6 +122,23 @@ class DataHandler:
                                              ",".join(langs)))
         cur.close()
         return self.get_challenge_id(con, desc)
+
+    def del_challenge(self, con, chall_id):
+        cur = con.cursor()
+        cur.execute("DELETE FROM challenges WHERE id = ?;", (chall_id,))
+
+    def accept_challenge(self, con, chall_id, language):
+        cur = con.cursor()
+        cur.execute("""UPDATE challenges SET language_used = ?,
+                       date_started = ?
+                       WHERE id = ?;""", (language,
+                    datetime.date.today().isoformat(), chall_id))
+
+    def finish_challenge(self, con, chall_id):
+        cur = con.cursor()
+        cur.execute("""UPDATE challenges SET date_finished = ?
+                       WHERE id = ?;""", (datetime.date.today().isoformat(),
+                                          chall_id))
 
     def get_challenge_set_id(self, con, name):
         cur = con.cursor()
